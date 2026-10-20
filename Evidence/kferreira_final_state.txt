@@ -2,7 +2,7 @@
 
 Name              : Kathy Ferreira
 Enabled           : False
-Description       : Offboarded 2026-10-14 | Ticket NMG-0203
+Description       : Offboarded 2026-10-19 | Ticket NMG-0203
 Groups            : 0
 DistinguishedName : CN=Kathy Ferreira,OU=Disabled Users,DC=NMG,DC=com
 
