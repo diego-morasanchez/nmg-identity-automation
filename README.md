@@ -20,6 +20,19 @@ tools query the domain controller directly for the last authentication
 date of every account. That value does not depend on paperwork being
 filed correctly or names matching between systems.
 
+## Before you start
+
+- Windows Server with the ActiveDirectory PowerShell module
+
+      Import-Module ActiveDirectory
+
+- Rights to modify user objects in the domain
+- An authorising ticket number, in the form NMG-0000
+- A Disabled Users OU at the root of the domain
+- A writable reports folder. Create it if it does not exist:
+
+      New-Item -Path "C:\Reports\Offboarding" -ItemType Directory -Force
+
 ## Tools
 
 ### Find-StaleAccounts.ps1
