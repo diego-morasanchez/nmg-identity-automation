@@ -145,10 +145,35 @@ Validation produces a report. The report is read by a person, and
 that person decides whether to proceed. Validation that feeds
 straight into action is not validation, it is a delay.
 
-### Known gap
+### How bulk requests are processed
+Bulk offboarding runs in three separate phases. Keeping them separate is
+the safety control. Merging any two removes it.
 
-No tooling currently exists to perform this validation. It is
-performed manually. Automating it is the next piece of work.
+**Phase 1, clean.** Trim every field, skip blank usernames, reject anything
+not shaped like a username, remove duplicates. Uses the file only.
+Changes nothing.
+
+**Phase 2, check and report.** Look up every row in the directory and
+record: does it exist, is it already disabled, is it a service account,
+does the person still appear to work here. Produces a report. Changes nothing.
+
+**A person reviews and approves the report.** Required. Deciding that a
+named person should NOT be offboarded is a judgment call, and only a
+person can make it.
+
+**Phase 3, act.** Offboard only the accounts on the approved list. Reads
+the approved output of Phase 2, never the original file.
+
+### Why the phases stay separate
+A check inside the action loop runs at full speed with nobody watching.
+It catches rules (service account, already disabled) but not a current
+employee, because that row looks exactly like a valid one.
+
+### Tested
+Simulated on 12 August 2026. The unchecked run reported full success
+while disabling a current employee and two service accounts, overwriting
+four existing records, and saving no evidence for any of the 32 accounts.
+See `Documentation/Blast-Radius-Findings.md`.
 
 
 ## Retention and disposal
