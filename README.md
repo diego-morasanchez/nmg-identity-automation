@@ -7,13 +7,11 @@ Northstar Medical Group.
 
 ## The Problem
 
-Northstar's offboarding depended on one person emailing IT whenever
-someone left. When she retired, those emails stopped, and no one
-caught it for 102 days.
+In this simulated environment, 23 people who had left the company still had working accounts 102 days after the offboarding process silently failed. One account had been open for 214 days.
 
-The manual cleanup took 11 hours and found 23 stale accounts, but it
-only worked off payroll records. It missed contractors, service
-accounts, and anyone whose departure was never logged.
+Northstar's offboarding depended on one person emailing IT whenever someone left. When she retired, those emails stopped, and no one noticed.
+
+The manual cleanup took 11 hours and only worked off payroll records. It missed contractors, service accounts, and anyone whose departure was never logged.
 
 ## The Approach
 
