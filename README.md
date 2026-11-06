@@ -1,5 +1,7 @@
 # NMG Identity Automation With Powershell
 
+  ▶️ **[Watch the walkthrough (Loom)](https://www.loom.com/share/900d24aa7f264618af1d4ade5ee4dc0b)**
+
 PowerShell tooling for identity lifecycle management, built for a fictional company called
 Northstar Medical Group.
 
